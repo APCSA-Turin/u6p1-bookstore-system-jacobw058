@@ -1,24 +1,46 @@
 package com.example.project;
 
 public class User{
-    //requires 3 private attributes String name, String Id, Book book that is initialized to empty
+//This class represents a user with attributes for their name, id, and book list. It allows the modification of a user's info.
 
-    //requires 1 contructor with two parameters that will initialize the name and id
- 
-    // public  getName() {}
+//attributes representing a user's name, ID, and book list
+    private String name;
+    private String Id;
+    private Book[] book = new Book[0];
+    
+    //constructor method to initialize name and Id
+    public User(String name, String Id) {
+        this.name = name;
+        this.Id = Id;
+    }
 
-    // public  setName() {}
+    //getter method for a user's name
+    public String getName() {
+        return name;
+    }
 
-    // public  getId() {}
+    //setter method for a user's name
+    public void setName(String newName) {
+        name = newName;
+    }
 
-    // public void setId() {}
+    //getter method for a user's ID
+    public String getId() {
+        return Id;
+    }
 
-    // public getBooks() {}
+    //setter method for a user's ID
+    public void setId(String newId) {
+        Id = newId;
+    }
 
-    // public setBooks() {}
+    //getter method for a user's book list
+    public Book[] getBooks() {
+        return book;
+    }
 
-    // public String bookListInfo(){} //returns a booklist for the user, if empty, output "empty"
-
-    // public String userInfo(){} //returns  "Name: []\nID: []\nBooks:\n[]"
-       
+    //setter method for a user's book list
+    public void setBooks(Book[] newBook) {
+        book = newBook;
+    }      
 }

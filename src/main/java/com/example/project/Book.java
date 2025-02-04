@@ -1,30 +1,77 @@
 package com.example.project;
 
 public class Book{
+//This class represents a Book with its attributes and methods. It allows the creation, modification, and retrieval of Book information. 
+    private String title;
+    private String author;
+    private int yearPublished;
+    private String isbn;
+    private int quantity;
+    public Book(String title, String author, int yearPublished, String isbn, int quantity) {
+        //Private attributes to represent Book information
+        this.title = title;
+        this.author = author;
+        this.yearPublished = yearPublished;
+        this.isbn = isbn;
+        this.quantity = quantity;
+    }
     //requires 5 attributes String title, String author, int yearPublished, String isbn, int quantity
 
     //requires 1 constructor with 5 arguments that intitialize the attribtues of the class.
 
-    // public  getTitle() {}
+    //getter method for the title of a book
+    public String getTitle() {
+        return title;
+    }
 
-    // public setTitle() {}
+    //setter method for the title of a book
+    public void setTitle(String newTitle) {
+        title = newTitle;
+    }
 
-    // public getAuthor() {}
+    //getter method for the name of the author of a book
+    public String getAuthor() {
+        return author;
+    }
 
-    // public setAuthor() {}
+    //setter method for the name of the author of a book
+    public void setAuthor(String newAuthor) {
+        author = newAuthor;
+    }
 
-    // public getYearPublished() {}
+    //getter method for the year published of a book
+    public int getYearPublished() {
+        return yearPublished;
+    }
 
-    // public setYearPublished() {}
+    //setter method for the year published of a book
+    public void setYearPublished(int newYearPublished) {
+        yearPublished = newYearPublished;
+    }
 
-    // public getIsbn() {}
+    //getter method for the ISBN of a book
+    public String getIsbn() {
+        return isbn;
+    }
 
-    // public void setIsbn() {}
+    //setter method for the ISBN of a book
+    public void setIsbn(String newIsbn) {
+        isbn = newIsbn;
+    }
 
-    // public int getQuantity() {}
+    //getter method for the quantity of a book
+    public int getQuantity() {
+        return quantity;
+    }
 
-    // public void setQuantity() {}
+    //setter method for the quantity of a book
+    public void setQuantity(int newQuantity) {
+        quantity = newQuantity;
+    }
 
-    // public  bookInfo(){} //returns "Title: [], Author: [], Year: [], ISBN: [], Quantity: []"
+    //returns a string of information about a book including title, author, year published, ISBN, and quantity of that book
+    public String bookInfo() {
+        return "Title: " + title + ", Author: " + author + ", Year: " + yearPublished + ", ISBN: " + isbn + ", Quantity: " + quantity;
+    } //returns "Title: [], Author: [], Year: [], ISBN: [], Quantity: []"
        
 }

@@ -1,31 +1,87 @@
 package com.example.project;
 
-public class BookStore{
+public class BookStore {
+//This class represents a bookstore with its attributes and methods. 
+//It allows the creation, modification, and retrieval of bookstore information 
+//including users and books in the store. 
+    
+    //array attribute representing a list of books
+    private Book[] books = new Book[5];
+    //array attribute representing a list of users
+    private User[] users = new User[10];
+    //int attribute used to track the number of books
+    private int bookCount = 0;
+    //int attribute used to track the number of users
+    private int userCount = 0;
+    
+    //empty constructor method
+    public BookStore() {
+        
+    }
 
-    //requires at least 2 attributes Book[] books, User[] users (initialized to an empty array of 10 max users) 
+    //getter method for the list of users
+    public User[] getUsers() {
+        return users;
+    }
 
-    //requires 1 empty constructor
+    //setter method for the list of users
+    public void setUsers(User[] newUsers) {
+        users = newUsers;
+    }
 
-    // public getUsers(){}
 
-    // public setUsers(){}
+    //getter method for the list of books
+    public Book[] getBooks() {
+        return books;
+    }
 
-    // public  getBooks(){}
+    //method to allow the addition of users to the user list
+    public void addUser(User user) {
+        users[userCount] = user;
+        userCount++;
+    } 
 
-    // public void addUser(User user){} 
+    //method to alow the removal of users from the user list
+    public void removeUser(User user) {
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] == user) {
+                users[i] = null;
+            }
+        }
+    }
 
-    // public void removeUser(User user){}
+    //method that consolidates the list of users so that any and all null values are at the end
+    public void consolidateUsers() {
+        User[] temp = new User[users.length];
+        int count = 0;
+        for (int i = 0; i < users.length; i++) {
+            if (users[i] != null) {
+                temp[count] = users[i];
+                count++;
+            }
+        }
+        for (int i = 0; i < users.length; i++) {
+            users[i] = temp[i];
+        }
+    }
 
-    // public void consolidateUsers(){}
+    //method to allow the addition of books to the book list
+    public void addBook(Book book) {
+        books[bookCount] = book;
+        bookCount++;
+    }
 
-    // public void addBook(Book book){}
+    //method to allow the insertion of books to specific indices in the book list
+    public void insertBook(Book book, int index) {
+        books[index] = book;
+    }
 
-    // public void insertBook(Book book, int index){}
-
-    // public void removeBook(Book book){}
-       
-    // public String bookStoreBookInfo(){} //you are not tested on this method but use it for debugging purposes
-
-    // public String bookStoreUserInfo(){} //you are not tested on this method but use it for debugging purposes
-
+    //method to allow the removal of books from the book list
+    public void removeBook(Book book) {
+        for (int i = 0; i < books.length; i++) {
+            if (books[i] == book) {
+                books[i] = null;
+            }
+        }
+    }
 }
